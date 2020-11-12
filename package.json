@@ -1,0 +1,26 @@
+{
+  "name": "NodeJs-api-rest",
+  "version": "1.0.0",
+  "description": "api com nodejs,express,mongodb,bcrypt,",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/HRsniper/NodeJs-api-rest.git",
+  "keywords": [],
+  "author": "Hércules HRsniper <63937242+HRsniper@users.noreply.github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HRsniper/NodeJs-api-rest/issues"
+  },
+  "homepage": "https://github.com/HRsniper/NodeJs-api-rest#readme",
+  "private": false,
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2"
+  }
+}
