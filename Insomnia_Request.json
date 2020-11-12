@@ -1,0 +1,103 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2020-11-12T04:02:51.319Z",
+  "__export_source": "insomnia.desktop.app:v2020.3.3",
+  "resources": [
+    {
+      "_id": "req_32edb284c7134c3d9d530a318d335988",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\":\"hr4\",\n\t\"email\":\"h@h4.com\",\n\t\"password\":\"12345\"\n}\n\n"
+      },
+      "created": 1605148774433,
+      "description": "",
+      "headers": [
+        { "id": "pair_dcf3fb9233db451ea8a774986b7f26c7", "name": "Content-Type", "value": "application/json" }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605148774433,
+      "method": "POST",
+      "modified": 1605153433826,
+      "name": "register",
+      "parameters": [],
+      "parentId": "fld_e8bac007555644a2803798d5016cf843",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/register",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_e8bac007555644a2803798d5016cf843",
+      "created": 1605148766171,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1605148766171,
+      "modified": 1605148766171,
+      "name": "user",
+      "parentId": "wrk_91c18524858c4b4b935a6413d33f1b34",
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_91c18524858c4b4b935a6413d33f1b34",
+      "created": 1605148719495,
+      "description": "",
+      "modified": 1605148719495,
+      "name": "NodeJs-api-rest",
+      "parentId": null,
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_693749fc08199ec01de3f3a438ed612a4aa71b6f",
+      "color": null,
+      "created": 1605148719709,
+      "data": {},
+      "dataPropertyOrder": null,
+      "isPrivate": false,
+      "metaSortKey": 1605148719709,
+      "modified": 1605148719709,
+      "name": "Base Environment",
+      "parentId": "wrk_91c18524858c4b4b935a6413d33f1b34",
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_693749fc08199ec01de3f3a438ed612a4aa71b6f",
+      "cookies": [],
+      "created": 1605148719724,
+      "modified": 1605148719724,
+      "name": "Default Jar",
+      "parentId": "wrk_91c18524858c4b4b935a6413d33f1b34",
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_80183d46922a48e2859e5e2ba2cde796",
+      "contentType": "yaml",
+      "contents": "",
+      "created": 1605148719513,
+      "fileName": "NodeJs-api-rest",
+      "modified": 1605148719513,
+      "parentId": "wrk_91c18524858c4b4b935a6413d33f1b34",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_60c36ec11ae94ef0a078271a336e8afb",
+      "color": "#ff0000",
+      "created": 1605148731082,
+      "data": { "base_url": "http://localhost:3000" },
+      "dataPropertyOrder": { "&": ["base_url"] },
+      "isPrivate": false,
+      "metaSortKey": 1605148731082,
+      "modified": 1605148945524,
+      "name": "production",
+      "parentId": "env_693749fc08199ec01de3f3a438ed612a4aa71b6f",
+      "_type": "environment"
+    }
+  ]
+}
