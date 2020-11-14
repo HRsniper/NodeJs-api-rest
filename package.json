@@ -2,9 +2,9 @@
   "name": "nodejs-api-rest",
   "version": "1.0.0",
   "description": "api com nodejs,express,mongodb,bcrypt,",
-  "main": "src/index.js",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/server.js"
   },
   "repository": "git+https://github.com/HRsniper/NodeJs-api-rest.git",
   "keywords": [],
