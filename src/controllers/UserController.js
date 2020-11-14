@@ -1,4 +1,5 @@
 // import express from "express";
+import jwt from "jsonwebtoken";
 
 import { User } from "../models/User.js";
 
@@ -15,7 +16,11 @@ class UserController {
 
       user.password = undefined;
 
-      return response.status(200).json({ user: user });
+      const payload = { id: user.id };
+
+      const token = await jwt.sign(payload, process.env.SECRET, { expiresIn: "1d" });
+
+      return response.status(200).json({ user, token });
     } catch (error) {
       return response.status(400).json({ error: error.message });
     }
