@@ -17,3 +17,5 @@ routes.post("/register", userController.create);
 routes.post("/auth", authController.auth);
 
 routes.get("/authroutes", AuthMiddleware, authRoutesController.authroutes);
+
+routes.post("/forgotpassword", userController.forgotPassword);
