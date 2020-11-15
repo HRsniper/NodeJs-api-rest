@@ -1,6 +1,7 @@
 // import express from "express";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
+import nodemailer from "nodemailer";
 
 import { User } from "../models/User.js";
 import { transport } from "../config/nodemailer.js";
@@ -45,22 +46,27 @@ class UserController {
         $set: { passwordResetToken: token, passwordResetExpires: expiresToken },
       });
 
-      await transport.sendMail(
-        {
-          to: email,
-          from: "herculesgamerrw@gmail.com",
-          template: "/forgot-password",
-          // subject: "Forgot password",
-          // text: "Your password",
-          // html: `<p>${token}</p>`,
-          context: { token },
-        },
-        (error) => {
-          console.log(error);
-          if (error) return response.status(400).json({ error: "cannot send forgot password" });
-          return response.status(200).json({ email: "email sent" });
-        }
-      );
+      let message = {
+        from: "Sender Name <sender@example.com>",
+        to: `${email}`,
+        subject: "Nodemailer is unicode friendly ✔",
+        text: "Hello to myself!",
+        html: "<p><b>Hello</b> to myself!</p>",
+      };
+
+      const info = await transport.sendMail(message, (error, info) => {
+        //   console.log("ERRO", error);
+        // console.log("INFO", info);
+
+        if (error) return response.status(400).json({ error: "cannot send forgot password" });
+
+        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+        console.log("Message sent: %s", info.messageId);
+        // Preview only available when sending through an Ethereal account
+        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+        return response.status(200).json({ email: "email sent" });
+      });
 
       return response.status(200).json({ token, expiresToken });
     } catch (error) {
