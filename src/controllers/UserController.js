@@ -74,6 +74,31 @@ class UserController {
       return response.status(400).json({ error: error.message });
     }
   }
+
+  async resetPassword(request, response) {
+    try {
+      const { email, token, password } = request.body;
+
+      const user = await User.findOne({ email }).select("+passwordResetToken passwordResetExpires");
+
+      if (!user) return response.status(404).json({ error: "user not exists" });
+
+      if (token !== user.passwordResetToken) return response.status(404).json({ error: "token invalid" });
+
+      const now = new Date();
+
+      if (now > user.passwordResetExpires)
+        return response.status(400).json({ error: "token expired,generate a new token" });
+
+      user.password = password;
+
+      await user.save();
+
+      return response.status(200).json({ password: "password reseted" });
+    } catch (error) {
+      return response.status(400).json({ error: error.message });
+    }
+  }
 }
 
 export const userController = new UserController();

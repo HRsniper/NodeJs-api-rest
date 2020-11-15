@@ -1,7 +1,7 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2020-11-14T04:45:39.945Z",
+  "__export_date": "2020-11-15T16:20:59.509Z",
   "__export_source": "insomnia.desktop.app:v2020.3.3",
   "resources": [
     {
@@ -9,7 +9,7 @@
       "authentication": {},
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"name\":\"hr5\",\n\t\"email\":\"h@h5.com\",\n\t\"password\":\"12345\"\n}\n\n"
+        "text": "{\n\t\"name\":\"hr5\",\n\t\"email\":\"h@gmail.com\",\n\t\"password\":\"12345\"\n}\n\n"
       },
       "created": 1605148774433,
       "description": "",
@@ -19,7 +19,7 @@
       "isPrivate": false,
       "metaSortKey": -1605148774433,
       "method": "POST",
-      "modified": 1605327037392,
+      "modified": 1605388554828,
       "name": "register",
       "parameters": [],
       "parentId": "fld_e8bac007555644a2803798d5016cf843",
@@ -59,7 +59,7 @@
       "authentication": {},
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"email\":\"h@h5.com\",\n\t\"password\":\"12345\"\n}\n\n"
+        "text": "{\n\t\"email\":\"h@gmail.com\",\n\t\"password\":\"123456789\"\n}\n\n"
       },
       "created": 1605325897180,
       "description": "",
@@ -69,7 +69,7 @@
       "isPrivate": false,
       "metaSortKey": -1605148774433,
       "method": "POST",
-      "modified": 1605327050591,
+      "modified": 1605457068538,
       "name": "auth",
       "parameters": [],
       "parentId": "fld_436371e77b3c41049fe0b5ccf5e23c1c",
@@ -93,6 +93,59 @@
       "name": "auth",
       "parentId": "wrk_91c18524858c4b4b935a6413d33f1b34",
       "_type": "request_group"
+    },
+    {
+      "_id": "req_26f37d6c4786445b81a9f2f045379792",
+      "authentication": {},
+      "body": { "mimeType": "application/json", "text": "{\n\t\"email\":\"h@gmail.com\"\n}" },
+      "created": 1605384211806,
+      "description": "",
+      "headers": [
+        { "id": "pair_dcf3fb9233db451ea8a774986b7f26c7", "name": "Content-Type", "value": "application/json" }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1604877021344.75,
+      "method": "POST",
+      "modified": 1605453148448,
+      "name": "forgot-passoword",
+      "parameters": [],
+      "parentId": "fld_436371e77b3c41049fe0b5ccf5e23c1c",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/forgotpassword",
+      "_type": "request"
+    },
+    {
+      "_id": "req_9a840198bafa4599a7376846c967a8ae",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\":\"h@gmail.com\",\n\t\"token\":\"0fd2d57cf791d82b1a01d428e50a03434e9f358f133dfb29\",\n\t\"password\":\"123456789\"\n}"
+      },
+      "created": 1605455796023,
+      "description": "",
+      "headers": [
+        { "id": "pair_dcf3fb9233db451ea8a774986b7f26c7", "name": "Content-Type", "value": "application/json" }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1604741144800.625,
+      "method": "POST",
+      "modified": 1605456329894,
+      "name": "reset-passoword",
+      "parameters": [],
+      "parentId": "fld_436371e77b3c41049fe0b5ccf5e23c1c",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/resetpassword",
+      "_type": "request"
     },
     {
       "_id": "req_602e03435de14435a3a279b762596ba4",

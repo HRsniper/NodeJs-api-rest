@@ -19,3 +19,5 @@ routes.post("/auth", authController.auth);
 routes.get("/authroutes", AuthMiddleware, authRoutesController.authroutes);
 
 routes.post("/forgotpassword", userController.forgotPassword);
+
+routes.post("/resetpassword", userController.resetPassword);
