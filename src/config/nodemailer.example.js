@@ -15,7 +15,7 @@ export const transport = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: "damaris3@ethereal.email",
-    pass: "hR36kjjU8HTrnzmPnB",
+    user: "YOURUSER@ethereal.email",
+    pass: "YOURPASS",
   },
 });
