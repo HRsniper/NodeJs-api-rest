@@ -24,6 +24,6 @@ routes.post("/resetpassword", AuthMiddleware, authController.resetPassword);
 
 routes.post("/projects", AuthMiddleware, projectController.create);
 routes.get("/projects", AuthMiddleware, projectController.list);
-routes.get("/projects/:id", AuthMiddleware, projectController.show);
-routes.put("/projects/:id", AuthMiddleware, projectController.update);
-routes.delete("/projects/:id", AuthMiddleware, projectController.delete);
+routes.get("/projects/:projectId", AuthMiddleware, projectController.show);
+routes.put("/projects/:projectId", AuthMiddleware, projectController.update);
+routes.delete("/projects/:projectId", AuthMiddleware, projectController.delete);
