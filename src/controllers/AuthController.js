@@ -3,9 +3,9 @@ import jwt from "jsonwebtoken";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
 
-import { User } from "../../models/User.js";
-import { transport } from "../../config/nodemailer.js";
-import { YourToken } from "../../mail-template/forgot-password.js";
+import { User } from "../models/User.js";
+import { transport } from "../config/nodemailer.js";
+import { YourToken } from "../mail-template/forgot-password.js";
 
 class AuthController {
   async auth(request, response) {
@@ -27,6 +27,14 @@ class AuthController {
       const token = await jwt.sign(payload, process.env.SECRET, { expiresIn: "1d" });
 
       return response.status(200).json({ user, token });
+    } catch (error) {
+      return response.status(400).json({ error: error.message });
+    }
+  }
+
+  async authenticated(request, response) {
+    try {
+      return response.status(200).json({ auth: "authenticated", userId: request.userId });
     } catch (error) {
       return response.status(400).json({ error: error.message });
     }

@@ -1,8 +1,8 @@
 import { Router } from "express";
 
-import { authController } from "./controllers/auth/AuthController.js";
+import { authController } from "./controllers/AuthController.js";
 import { userController } from "./controllers/UserController.js";
-import { authRoutesController } from "./controllers/AuthRoutesController.js";
+import { projectController } from "./controllers/ProjectController.js";
 import { AuthMiddleware } from "./middlewares/AuthMiddleware.js";
 
 export const routes = Router();
@@ -16,8 +16,14 @@ routes.post("/register", userController.create);
 
 routes.post("/auth", authController.auth);
 
-routes.get("/authroutes", AuthMiddleware, authRoutesController.authroutes);
+routes.get("/authenticated", AuthMiddleware, authController.authenticated);
 
 routes.post("/forgotpassword", AuthMiddleware, authController.forgotPassword);
 
 routes.post("/resetpassword", AuthMiddleware, authController.resetPassword);
+
+routes.post("/projects", AuthMiddleware, projectController.create);
+routes.get("/projects", AuthMiddleware, projectController.list);
+routes.get("/projects/:id", AuthMiddleware, projectController.show);
+routes.put("/projects/:id", AuthMiddleware, projectController.update);
+routes.delete("/projects/:id", AuthMiddleware, projectController.delete);
