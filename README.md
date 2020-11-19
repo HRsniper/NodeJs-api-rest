@@ -1,2 +1,2 @@
 # NodeJs-api-rest
-api com nodejs,express,mongodb,bcrypt,dotenv
+api com nodejs,express,mongodb,bcrypt,nodemailer,jsonwebtoken.
